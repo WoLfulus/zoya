@@ -30,7 +30,7 @@ Visit the [contributing guidelines](https://github.com/wolfulus/zoya/blob/master
 
 Come over to [Discord](https://discord.gg/X7gp2kV) or [Twitter](https://twitter.com/wolfulus) to share your thoughts on the project.
 
-> This is a complete rewrite of the awesome [Signale](https://github.com/klaussinani/signale) from [Klaus Siani](https://github.com/klaussinani), and it's **NOT** intended to be a drop-in replacement.
+> This is a complete rewrite of [Signale](https://github.com/klaussinani/signale), written by [Klaus Siani](https://github.com/klaussinani), and it's **NOT** intended to be a drop-in replacement.
 
 ## Highlights
 
