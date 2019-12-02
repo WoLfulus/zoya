@@ -1,0 +1,21 @@
+# dependencies
+node_modules
+yarn.lock
+
+# build
+lib
+dist
+types
+coverage
+
+# logs
+*.log
+
+# OS
+.DS_Store
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
