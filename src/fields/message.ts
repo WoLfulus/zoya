@@ -21,7 +21,10 @@ export default function({
     return {
       data: message.message,
       name,
-      text: transformer(message.message)
+      text:
+        typeof message.message === "object"
+          ? transformer(JSON.stringify(message.message))
+          : transformer(message.message)
     };
   };
 }
