@@ -16,7 +16,7 @@ const chalk = new Instance({
 describe("fields", () => {
   function createMessage(
     type: string,
-    msg: string,
+    msg: any,
     {
       context: args,
       options = {}
@@ -254,6 +254,12 @@ describe("fields", () => {
       const factory = message({ transformer: scopes => `[${scopes}]` });
       const field = factory(createMessage("info", "hello")) as IField;
       expect(field.text).toBe("[hello]");
+    });
+
+    it("should return formatted JSON when passed an object", () => {
+      const factory = message({ name: "some_message" });
+      const field = factory(createMessage("debug", { key: true })) as IField;
+      expect(field.text).toBe('\u001b[37m{"key":true}\u001b[39m');
     });
   });
 
