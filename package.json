@@ -67,7 +67,7 @@
     "prettier": "^1.19.1",
     "ts-jest": "^24.2.0",
     "ts-node": "^8.5.4",
-    "tslint": "^5.20.1",
+    "tslint": "^6.1.0",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.7.2",
     "yarn-or-npm": "^3.0.1"
