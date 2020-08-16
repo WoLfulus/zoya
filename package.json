@@ -1,79 +1,78 @@
 {
-  "name": "zoya",
-  "version": "1.0.0",
-  "description": "Highly configurable logging utility",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/wolfulus/zoya"
-  },
-  "author": {
-    "name": "João Biondo",
-    "email": "wolfulus@gmail.com",
-    "url": "https://wolfulus.com"
-  },
-  "main": "./lib/index.js",
-  "typings": "./lib/index.d.ts",
-  "maintainers": [
-    {
-      "name": "João Biondo",
-      "email": "wolfulus@gmail.com",
-      "url": "https://wolfulus.com"
-    }
-  ],
-  "engines": {
-    "node": ">=8"
-  },
-  "files": [
-    "lib/**/*"
-  ],
-  "keywords": [
-    "log",
-    "cli",
-    "logger",
-    "logging",
-    "hackable",
-    "colorful",
-    "console",
-    "signale",
-    "winston",
-    "logstash"
-  ],
-  "scripts": {
-    "lint": "tslint --project ./tsconfig.json",
-    "format": "prettier --check ./{src,tests}/**/*.ts",
-    "preview": "yon run build && node --inspect -r ts-node/register ./src/main.ts",
-    "build": "tsc",
-    "test": "jest --coverage",
-    "test:report": "yon test && cat ./coverage/lcov.info | coveralls",
-    "pretest": "yon run lint",
-    "prepare": "yon run build && yon run lint"
-  },
-  "dependencies": {
-    "chalk": "^3.0.0",
-    "node-emoji": "^1.10.0",
-    "safe-json-stringify": "^1.2.0",
-    "strip-color": "^0.1.0"
-  },
-  "devDependencies": {
-    "@types/jest": "^24.0.23",
-    "@types/node": "^13.9.5",
-    "@types/node-emoji": "^1.8.1",
-    "@types/safe-json-stringify": "^1.1.0",
-    "@types/strip-color": "^0.1.0",
-    "coveralls": "^3.0.9",
-    "cross-env": "^6.0.3",
-    "jest": "^24.9.0",
-    "prettier": "^2.0.2",
-    "ts-jest": "^24.2.0",
-    "ts-node": "^8.5.4",
-    "tslint": "^6.1.0",
-    "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.7.2",
-    "yarn-or-npm": "^3.0.1"
-  },
-  "jest": {
-    "preset": "ts-jest",
-    "testEnvironment": "node"
-  }
+	"name": "zoya",
+	"version": "1.0.1",
+	"description": "Highly configurable logging utility",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/wolfulus/zoya"
+	},
+	"author": {
+		"name": "João Biondo",
+		"email": "wolfulus@gmail.com",
+		"url": "https://wolfulus.com"
+	},
+	"main": "./lib/index.js",
+	"typings": "./lib/index.d.ts",
+	"maintainers": [
+		{
+			"name": "João Biondo",
+			"email": "wolfulus@gmail.com",
+			"url": "https://wolfulus.com"
+		}
+	],
+	"engines": {
+		"node": ">=8"
+	},
+	"files": [ "lib/**/*" ],
+	"keywords": [
+		"log",
+		"cli",
+		"logger",
+		"logging",
+		"hackable",
+		"colorful",
+		"console",
+		"signale",
+		"winston",
+		"logstash"
+	],
+	"scripts": {
+		"lint": "tslint --project ./tsconfig.json",
+		"format": "prettier --check ./{src,tests}/**/*.ts",
+		"preview": "yon run build && node --inspect -r ts-node/register ./src/main.ts",
+		"build": "tsc",
+		"test": "jest --coverage",
+		"test:report": "yon test && cat ./coverage/lcov.info | coveralls",
+		"pretest": "yon run lint",
+		"prepare": "yon run build && yon run lint"
+	},
+	"dependencies": {
+		"chalk": "^4.1.0",
+		"node-emoji": "^1.10.0",
+		"safe-json-stringify": "^1.2.0",
+		"strip-color": "^0.1.0"
+	},
+	"devDependencies": {
+		"@types/chalk": "^2.2.0",
+		"@types/jest": "^26.0.10",
+		"@types/node": "^14.0.27",
+		"@types/node-emoji": "^1.8.1",
+		"@types/safe-json-stringify": "^1.1.1",
+		"@types/strip-color": "^0.1.0",
+		"coveralls": "^3.0.9",
+		"cross-env": "^7.0.2",
+		"jest": "^26.4.0",
+		"prettier": "^2.0.2",
+		"ts-jest": "^26.2.0",
+		"ts-node": "^8.5.4",
+		"tslint": "^6.1.0",
+		"tslint-config-prettier": "^1.18.0",
+		"typescript": "^3.7.2",
+		"yarn-or-npm": "^3.0.1"
+	},
+	"jest": {
+		"preset": "ts-jest",
+		"testEnvironment": "node"
+	}
 }

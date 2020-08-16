@@ -26,11 +26,11 @@ export interface IScopeOptions {
  * Scope field
  * @param config Field configuration
  */
-export default function({
+export default function ({
   name: defaultName = "scope",
   scopes: defaultScopes = ["zoya"],
-  transformer: defaultTransformer = scopeList =>
-    gray(scopeList.map(scope => `[${scope}]`).join(""))
+  transformer: defaultTransformer = (scopeList) =>
+    gray(scopeList.map((scope) => `[${scope}]`).join("")),
 }: IScopeConfig = {}): Field {
   return function handler(message: IMessage): IField {
     const options = message.type.options as IScopeOptions;
@@ -38,7 +38,7 @@ export default function({
     return {
       data: defaultScopes,
       name: defaultName,
-      text: defaultTransformer(scope)
+      text: defaultTransformer(scope),
     };
   };
 }

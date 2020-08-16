@@ -102,8 +102,10 @@ import log from "zoya";
 log.trace("trace messages...");
 log.debug("debug messages...");
 log.info("info messages...");
+log.success("success messages...");
 log.warn("warn messages...");
 log.error("error messages...");
+log.failed("failed messages...");
 log.fatal("fatal messages...");
 ```
 

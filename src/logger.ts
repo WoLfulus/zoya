@@ -58,7 +58,7 @@ export class LoggerBase<T extends LoggerTypes> {
     const filledStreams: IStream[] = (streams || []).map(
       ({ stream, level }) => ({
         level: util.isNumber(level) ? level : options.level,
-        stream
+        stream,
       })
     );
 
@@ -71,19 +71,19 @@ export class LoggerBase<T extends LoggerTypes> {
         [key]: {
           id: key,
           level: type.level,
-          options: type.options || {}
-        }
+          options: type.options || {},
+        },
       }))
       .reduce((previous, current) => Object.assign(previous, current));
 
     this.options = Object.assign(options, {
       streams: filledStreams,
-      types: filledTypes
+      types: filledTypes,
     }) as Required<IOptions<T>>;
 
     Object.entries(this.options.types).forEach(([method, configuration]) => {
       Object.defineProperty(this, method, {
-        value: this.writer.bind(this, { id: method, ...configuration })
+        value: this.writer.bind(this, { id: method, ...configuration }),
       });
     });
   }
@@ -95,7 +95,7 @@ export class LoggerBase<T extends LoggerTypes> {
   public enhance<E extends LoggerTypes>(types: E): Logger<T & E> {
     const combinedTypes = Object.assign(this.options.types, types) as T & E;
     const combinedOptions: PartialOptions<T & E> = Object.assign(this.options, {
-      types: combinedTypes
+      types: combinedTypes,
     });
     const logger: any = new LoggerBase<T & E>(combinedOptions);
     return logger;
@@ -154,10 +154,10 @@ export class LoggerBase<T extends LoggerTypes> {
     // Add registered fields
     message.fields.push(
       ...(this.options.fields
-        .map(field => arrayify(field(message)))
+        .map((field) => arrayify(field(message)))
         .reduce((prev, curr) => prev.concat(curr))
         .filter(
-          field => typeof field !== "undefined" && field != null
+          (field) => typeof field !== "undefined" && field != null
         ) as IField[])
     );
 
@@ -189,7 +189,7 @@ export class LoggerBase<T extends LoggerTypes> {
       context,
       fields: [],
       message,
-      type
+      type,
     });
   }
 }

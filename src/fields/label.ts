@@ -56,10 +56,10 @@ export interface ILabelConfig {
  * Label field
  * @param config Field configuration
  */
-export default function({
+export default function ({
   minLength: defaultLength = 0,
-  transformer: defaultTransformer = text => underline(gray(text)),
-  name: defaultName = "label"
+  transformer: defaultTransformer = (text) => underline(gray(text)),
+  name: defaultName = "label",
 }: ILabelConfig = {}): Field {
   const labels: ILabels = {};
   let fields: IFields = {};
@@ -74,7 +74,7 @@ export default function({
   ) => {
     labels[id] = normalizeLabel({
       name: name || id,
-      transformer
+      transformer,
     });
     refreshFields();
   };
@@ -95,7 +95,7 @@ export default function({
             length,
             name: name as string,
             transformed,
-            type
+            type,
           };
         }
       )
@@ -108,8 +108,8 @@ export default function({
               text: padEnd(
                 transformed,
                 transformed.length + (highestLength - length)
-              )
-            }
+              ),
+            },
           };
         }
       )
@@ -118,10 +118,10 @@ export default function({
 
   const normalizeLabel = ({
     name,
-    transformer = defaultTransformer
+    transformer = defaultTransformer,
   }: ILabelOptionsValue): ILabelOptionsValue => ({
     name,
-    transformer
+    transformer,
   });
 
   return function handler(message: IMessage): IField {

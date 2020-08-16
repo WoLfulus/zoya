@@ -13,9 +13,9 @@ export interface ISeparatorConfig {
  * Separator field
  * @param config Field configuration
  */
-export default function({
+export default function ({
   separator = "»",
-  transformer = value => gray(value)
+  transformer = (value) => gray(value),
 }: ISeparatorConfig = {}): Field {
   const transformed = transformer(separator);
   return function handler(_: IMessage): IField {

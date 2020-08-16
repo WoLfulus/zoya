@@ -41,7 +41,7 @@ export function padStart(
   if (value.length >= length) {
     return value;
   }
-  if (String.prototype.padStart) {
+  if ("padStart" in String.prototype) {
     return value.padStart(length, filler);
   }
   length -= value.length;
@@ -64,7 +64,7 @@ export function padEnd(
   if (value.length >= length) {
     return value;
   }
-  if (String.prototype.padEnd) {
+  if ("padEnd" in String.prototype) {
     return value.padEnd(length, filler);
   }
   length -= value.length;

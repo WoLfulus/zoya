@@ -1,4 +1,4 @@
-import { blue, gray, magenta, red, underline, yellow } from "chalk";
+import { blue, gray, magenta, red, underline, yellow, green } from "chalk";
 import { Writable } from "stream";
 import {
   badge,
@@ -7,7 +7,7 @@ import {
   level,
   message,
   scope,
-  separator
+  separator,
 } from "./fields";
 import { Level } from "./levels";
 import { Field } from "./message";
@@ -60,9 +60,9 @@ export const DefaultTypes = {
       badge: "beetle",
       label: {
         name: "debug",
-        transformer: (text: string) => underline(magenta(text))
-      }
-    }
+        transformer: (text: string) => underline(magenta(text)),
+      },
+    },
   },
   error: {
     level: Level.error,
@@ -70,9 +70,19 @@ export const DefaultTypes = {
       badge: "x",
       label: {
         name: "error",
-        transformer: (text: string) => underline(red(text))
-      }
-    }
+        transformer: (text: string) => underline(red(text)),
+      },
+    },
+  },
+  failed: {
+    level: Level.error,
+    options: {
+      badge: "x",
+      label: {
+        name: "failed",
+        transformer: (text: string) => underline(red(text)),
+      },
+    },
   },
   fatal: {
     level: Level.fatal,
@@ -80,9 +90,9 @@ export const DefaultTypes = {
       badge: "sos",
       label: {
         name: "fatal",
-        transformer: (text: string) => underline(red(text))
-      }
-    }
+        transformer: (text: string) => underline(red(text)),
+      },
+    },
   },
   info: {
     level: Level.info,
@@ -90,9 +100,19 @@ export const DefaultTypes = {
       badge: "large_blue_circle",
       label: {
         name: "info",
-        transformer: (text: string) => underline(blue(text))
-      }
-    }
+        transformer: (text: string) => underline(blue(text)),
+      },
+    },
+  },
+  success: {
+    level: Level.info,
+    options: {
+      badge: "heavy_check_mark",
+      label: {
+        name: "success",
+        transformer: (text: string) => underline(green(text)),
+      },
+    },
   },
   trace: {
     level: Level.trace,
@@ -100,9 +120,9 @@ export const DefaultTypes = {
       badge: "stopwatch",
       label: {
         name: "trace",
-        transformer: (text: string) => underline(gray(text))
-      }
-    }
+        transformer: (text: string) => underline(gray(text)),
+      },
+    },
   },
   warn: {
     level: Level.warn,
@@ -110,10 +130,10 @@ export const DefaultTypes = {
       badge: "warning",
       label: {
         name: "warning",
-        transformer: (text: string) => underline(yellow(text))
-      }
-    }
-  }
+        transformer: (text: string) => underline(yellow(text)),
+      },
+    },
+  },
 };
 
 /**
@@ -121,16 +141,16 @@ export const DefaultTypes = {
  */
 export const DefaultFields = [
   scope({
-    scopes: ["zoya"]
+    scopes: ["zoya"],
   }),
   separator(),
   badge(),
   label({
-    minLength: 7
+    minLength: 7,
   }),
   level(),
   message(),
-  context()
+  context(),
 ];
 
 /**
@@ -139,8 +159,8 @@ export const DefaultFields = [
 export const DefaultStreams = [
   {
     level: Level.all,
-    stream: process.stdout
-  }
+    stream: process.stdout,
+  },
 ];
 
 /**
@@ -152,5 +172,5 @@ export const DefaultOptions: IOptions<IDefaultTypes> = {
   json: false,
   level: Level.info,
   streams: DefaultStreams,
-  types: DefaultTypes
+  types: DefaultTypes,
 };

@@ -1373,7 +1373,7 @@ export interface IBadgeConfig {
  * Badge field
  * @param config Field configuration
  */
-export default function({ badge = " " }: IBadgeConfig = {}): Field {
+export default function ({ badge = " " }: IBadgeConfig = {}): Field {
   const badges: IBadges = {};
   function getBadge(name: string, requestedBadge: string = badge) {
     if (name in badges) {
@@ -1391,11 +1391,11 @@ export default function({ badge = " " }: IBadgeConfig = {}): Field {
     const options = message.type.options as IBadgeOptions;
     if (options) {
       return {
-        text: padEnd(getBadge(id, options.badge), 3, " ")
+        text: padEnd(getBadge(id, options.badge), 3, " "),
       };
     }
     return {
-      text: padEnd(getBadge(id, badge), 3, " ")
+      text: padEnd(getBadge(id, badge), 3, " "),
     };
   };
 }

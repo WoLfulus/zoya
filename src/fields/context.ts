@@ -14,9 +14,9 @@ export interface IContextConfig {
  * Context field
  * @param config Field configuration
  */
-export default function({
+export default function ({
   name = "context",
-  transformer = value => gray(value)
+  transformer = (value) => gray(value),
 }: IContextConfig = {}): Field {
   return function handler(message: IMessage): IField | null {
     if (typeof message.context === "undefined") {
@@ -25,7 +25,7 @@ export default function({
     return {
       data: message.context,
       name,
-      text: transformer(stringify(message.context, null, 2))
+      text: transformer(stringify(message.context, null, 2)),
     };
   };
 }
