@@ -49,6 +49,7 @@ export interface IDefaultTypes extends ITypes {
   error: IType;
   fatal: IType;
   success: IType;
+  failed: IType;
 }
 
 /**
