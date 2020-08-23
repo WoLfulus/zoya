@@ -48,6 +48,7 @@ export interface IDefaultTypes extends ITypes {
   warn: IType;
   error: IType;
   fatal: IType;
+  success: IType;
 }
 
 /**
