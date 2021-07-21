@@ -56,7 +56,7 @@
 	"devDependencies": {
 		"@types/chalk": "^2.2.0",
 		"@types/jest": "^26.0.10",
-		"@types/node": "^15.0.2",
+		"@types/node": "^16.4.0",
 		"@types/node-emoji": "^1.8.1",
 		"@types/safe-json-stringify": "^1.1.1",
 		"@types/strip-color": "^0.1.0",
