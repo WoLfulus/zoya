@@ -48,7 +48,7 @@
 		"prepare": "yon run build && yon run lint"
 	},
 	"dependencies": {
-		"chalk": "^4.1.0",
+		"chalk": "^5.1.0",
 		"node-emoji": "^1.10.0",
 		"safe-json-stringify": "^1.2.0",
 		"strip-color": "^0.1.0"
